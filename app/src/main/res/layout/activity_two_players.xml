@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#DCE775">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        tools:context=".TwoPlayers">
+
+        <LinearLayout
+            android:id="@+id/player1Box"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/player1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:gravity="center_horizontal"
+                android:text="@string/player1"
+                android:textAllCaps="true"
+                android:textColor="#1B5E20"
+                android:textSize="30sp"
+                android:textStyle="bold"
+
+                />
+
+            <TextView
+                android:id="@+id/player_1_score"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/zero"
+                android:textColor="#BF360C"
+                android:textSize="50sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/player2Box"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="30dp"
+            android:orientation="vertical"
+            tools:ignore="RtlHardcoded">
+
+            <TextView
+                android:id="@+id/player2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:gravity="center_horizontal"
+                android:text="@string/player2"
+                android:textAllCaps="true"
+                android:textColor="#1B5E20"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                tools:ignore="RtlHardcoded" />
+
+            <TextView
+                android:id="@+id/player_2_score"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/zero"
+                android:textColor="#BF360C"
+                android:textSize="50sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/player1Box"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:fontFamily="casual"
+            android:textColor="#BF360C"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/row1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="200dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button_0"
+                android:layout_width="83dp"
+                android:layout_height="83dp"
+                android:layout_margin="7dp"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                tools:ignore="ButtonStyle" />
+
+            <Button
+                android:id="@+id/button_1"
+                android:layout_width="83dp"
+                android:layout_height="83dp"
+                android:layout_margin="7dp"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                tools:ignore="ButtonStyle" />
+
+            <Button
+                android:id="@+id/button_2"
+                android:layout_width="83dp"
+                android:layout_height="83dp"
+                android:layout_margin="7dp"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                tools:ignore="ButtonStyle" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/row2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/row1"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button_3"
+                android:layout_width="83dp"
+                android:layout_height="83dp"
+                android:layout_margin="7dp"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                tools:ignore="ButtonStyle" />
+
+            <Button
+                android:id="@+id/button_4"
+                android:layout_width="83dp"
+                android:layout_height="83dp"
+                android:layout_margin="7dp"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                tools:ignore="ButtonStyle" />
+
+            <Button
+                android:id="@+id/button_5"
+                android:layout_width="83dp"
+                android:layout_height="83dp"
+                android:layout_margin="7dp"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                tools:ignore="ButtonStyle" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/row3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/row2"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button_6"
+                android:layout_width="83dp"
+                android:layout_height="83dp"
+                android:layout_margin="7dp"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                tools:ignore="ButtonStyle" />
+
+            <Button
+                android:id="@+id/button_7"
+                android:layout_width="83dp"
+                android:layout_height="83dp"
+                android:layout_margin="7dp"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                tools:ignore="ButtonStyle" />
+
+            <Button
+                android:id="@+id/button_8"
+                android:layout_width="83dp"
+                android:layout_height="83dp"
+                android:layout_margin="7dp"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                tools:ignore="ButtonStyle" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/row3"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="casual"
+            android:text="@string/reset"
+            android:textColor="#DCE775"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:ignore="RtlHardcoded" />
+
+        <Button
+            android:id="@+id/home"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/row3"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="30dp"
+            android:fontFamily="casual"
+            android:text="@string/home"
+            android:textColor="#DCE775"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:ignore="RtlHardcoded" />
+    </RelativeLayout>
+</ScrollView>

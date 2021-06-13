@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Tic Tac Toe</string>
+    <string name="SinglePlayer">Single Player</string>
+    <string name="TwoPlayer">Two Players</string>
+    <string name="select">Select your shape</string>
+    <string name="zero">O</string>
+    <string name="cross">X</string>
+    <string name="home">Home</string>
+    <string name="play">Play</string>
+    <string name="reset">Reset</string>
+    <string name="tie">It\'s a tie!</string>
+    <string name="you">You</string>
+    <string name="bot">Bot</string>
+    <string name="youWon">You won the game!</string>
+    <string name="botWon">Bot won the game!</string>
+    <string name="EnterName">Enter your name</string>
+    <string name="player1">Player 1</string>
+    <string name="player2">Player 2</string>
+    <string name="whoWillStart">Do you want to make first move?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="bg">background image</string>
+    <string name="arrow">Arrow</string>
+</resources>
