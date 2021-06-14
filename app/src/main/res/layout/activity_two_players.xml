@@ -1,44 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#DCE775">
 
     <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+         android:id="@+id/twoP"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
         tools:context=".TwoPlayers">
+
+        <ImageView
+            android:contentDescription="@string/bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bg4neon" />
 
         <LinearLayout
             android:id="@+id/player1Box"
             android:layout_width="wrap_content"
+            android:layout_marginLeft="6dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="5dp"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/player1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="casual"
+                android:fontFamily="monospace"
                 android:gravity="center_horizontal"
                 android:text="@string/player1"
                 android:textAllCaps="true"
-                android:textColor="#1B5E20"
+                android:shadowColor="@color/pink3"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="15"
+                android:textColor="@color/pink3"
                 android:textSize="30sp"
                 android:textStyle="bold"
 
                 />
 
             <TextView
+                android:fontFamily="monospace"
                 android:id="@+id/player_1_score"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:text="@string/zero"
-                android:textColor="#BF360C"
+                android:shadowColor="@color/green1"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="15"
+                android:textColor="@color/green1"
                 android:textSize="50sp" />
         </LinearLayout>
 
@@ -46,8 +60,9 @@
             android:id="@+id/player2Box"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginRight="6dp"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="5dp"
             android:orientation="vertical"
             tools:ignore="RtlHardcoded">
 
@@ -55,22 +70,31 @@
                 android:id="@+id/player2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="casual"
+                android:fontFamily="monospace"
                 android:gravity="center_horizontal"
                 android:text="@string/player2"
                 android:textAllCaps="true"
-                android:textColor="#1B5E20"
+                android:shadowColor="@color/pink3"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="15"
+                android:textColor="@color/pink3"
                 android:textSize="30sp"
                 android:textStyle="bold"
                 tools:ignore="RtlHardcoded" />
 
             <TextView
+                android:fontFamily="monospace"
                 android:id="@+id/player_2_score"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
                 android:text="@string/zero"
-                android:textColor="#BF360C"
+                android:shadowColor="@color/green1"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="15"
+                android:textColor="@color/green1"
                 android:textSize="50sp" />
 
         </LinearLayout>
@@ -83,7 +107,11 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:fontFamily="casual"
-            android:textColor="#BF360C"
+            android:shadowColor="@color/green1"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="15"
+            android:textColor="@color/green1"
             android:textSize="25sp"
             android:textStyle="bold" />
 
@@ -92,35 +120,54 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="200dp"
+            android:layout_marginTop="30dp"
+            android:layout_below="@id/status"
             android:orientation="horizontal">
 
-            <Button
+            <TextView
+                android:fontFamily="monospace"
+                android:textAlignment="center"
+                tools:ignore="RtlCompat"
+                android:gravity="fill"
+
                 android:id="@+id/button_0"
                 android:layout_width="83dp"
                 android:layout_height="83dp"
                 android:layout_margin="7dp"
-                android:textSize="40sp"
+                android:background="@drawable/buttonborder"
+                android:textSize="60sp"
                 android:textStyle="bold"
-                tools:ignore="ButtonStyle" />
+               />
 
-            <Button
+            <TextView
+                android:fontFamily="monospace"
+                android:textAlignment="center"
+                tools:ignore="RtlCompat"
+                android:gravity="fill"
+
                 android:id="@+id/button_1"
                 android:layout_width="83dp"
+                android:background="@drawable/buttonborder"
                 android:layout_height="83dp"
                 android:layout_margin="7dp"
-                android:textSize="40sp"
+                android:textSize="60sp"
                 android:textStyle="bold"
-                tools:ignore="ButtonStyle" />
+               />
 
-            <Button
+            <TextView
+                android:fontFamily="monospace"
+                android:textAlignment="center"
+                tools:ignore="RtlCompat"
+                android:gravity="fill"
+
                 android:id="@+id/button_2"
                 android:layout_width="83dp"
                 android:layout_height="83dp"
+                android:background="@drawable/buttonborder"
                 android:layout_margin="7dp"
-                android:textSize="40sp"
+                android:textSize="60sp"
                 android:textStyle="bold"
-                tools:ignore="ButtonStyle" />
+                />
         </LinearLayout>
 
         <LinearLayout
@@ -131,32 +178,50 @@
             android:layout_centerHorizontal="true"
             android:orientation="horizontal">
 
-            <Button
+            <TextView
+                android:fontFamily="monospace"
+                android:textAlignment="center"
+                tools:ignore="RtlCompat"
+                android:gravity="fill"
+
                 android:id="@+id/button_3"
                 android:layout_width="83dp"
                 android:layout_height="83dp"
                 android:layout_margin="7dp"
-                android:textSize="40sp"
+                android:background="@drawable/buttonborder"
+                android:textSize="60sp"
                 android:textStyle="bold"
-                tools:ignore="ButtonStyle" />
+                />
 
-            <Button
+            <TextView
+                android:fontFamily="monospace"
+                android:textAlignment="center"
+                tools:ignore="RtlCompat"
+                android:gravity="fill"
+
                 android:id="@+id/button_4"
+                android:background="@drawable/buttonborder"
                 android:layout_width="83dp"
                 android:layout_height="83dp"
                 android:layout_margin="7dp"
-                android:textSize="40sp"
+                android:textSize="60sp"
                 android:textStyle="bold"
-                tools:ignore="ButtonStyle" />
+                />
 
-            <Button
+            <TextView
+                android:fontFamily="monospace"
+                android:textAlignment="center"
+                tools:ignore="RtlCompat"
+                android:gravity="fill"
+
                 android:id="@+id/button_5"
                 android:layout_width="83dp"
                 android:layout_height="83dp"
                 android:layout_margin="7dp"
-                android:textSize="40sp"
+                android:textSize="60sp"
+                android:background="@drawable/buttonborder"
                 android:textStyle="bold"
-                tools:ignore="ButtonStyle" />
+               />
         </LinearLayout>
 
 
@@ -168,61 +233,123 @@
             android:layout_centerHorizontal="true"
             android:orientation="horizontal">
 
-            <Button
+            <TextView
+                android:fontFamily="monospace"
+                android:textAlignment="center"
+                tools:ignore="RtlCompat"
+                android:gravity="fill"
+
                 android:id="@+id/button_6"
+                android:background="@drawable/buttonborder"
                 android:layout_width="83dp"
                 android:layout_height="83dp"
                 android:layout_margin="7dp"
-                android:textSize="40sp"
+                android:textSize="60sp"
                 android:textStyle="bold"
-                tools:ignore="ButtonStyle" />
+                />
 
-            <Button
+            <TextView
+                android:fontFamily="monospace"
+                android:textAlignment="center"
+                tools:ignore="RtlCompat"
+                android:gravity="fill"
+
                 android:id="@+id/button_7"
                 android:layout_width="83dp"
                 android:layout_height="83dp"
+                android:background="@drawable/buttonborder"
                 android:layout_margin="7dp"
-                android:textSize="40sp"
+                android:textSize="60sp"
                 android:textStyle="bold"
-                tools:ignore="ButtonStyle" />
+               />
 
-            <Button
+            <TextView
+                android:fontFamily="monospace"
+                android:textAlignment="center"
+                tools:ignore="RtlCompat"
+                android:gravity="fill"
+
                 android:id="@+id/button_8"
                 android:layout_width="83dp"
                 android:layout_height="83dp"
                 android:layout_margin="7dp"
-                android:textSize="40sp"
+                android:background="@drawable/buttonborder"
+                android:textSize="60sp"
                 android:textStyle="bold"
-                tools:ignore="ButtonStyle" />
+                />
         </LinearLayout>
 
-        <Button
-            android:id="@+id/reset"
+    <TextView
+        android:id="@+id/playAgain1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/playAgain"
+        android:layout_below="@id/row3"
+        android:layout_marginTop="4dp"
+        android:textSize="17sp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
+        android:shadowColor="@color/pink3"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="8"
+        android:visibility="invisible"
+        android:textColor="@color/pink3"/>
+
+        <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/row3"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="20dp"
-            android:fontFamily="casual"
-            android:text="@string/reset"
-            android:textColor="#DCE775"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            tools:ignore="RtlHardcoded" />
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/buttonborder">
 
-        <Button
-            android:id="@+id/home"
-            android:layout_width="100dp"
+            <TextView
+                android:id="@+id/reset"
+                android:layout_width="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:fontFamily="monospace"
+                android:text="@string/reset"
+                android:padding="10dp"
+                android:textAllCaps="true"
+                android:shadowColor="@color/pink3"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="10"
+                android:textColor="@color/pink3"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                tools:ignore="RtlHardcoded" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/row3"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="30dp"
-            android:fontFamily="casual"
-            android:text="@string/home"
-            android:textColor="#DCE775"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            tools:ignore="RtlHardcoded" />
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="32dp"
+            android:background="@drawable/buttonborder"
+            tools:ignore="RtlHardcoded">
+
+            <TextView
+                android:id="@+id/home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:fontFamily="monospace"
+                android:gravity="center_horizontal"
+                android:padding="10dp"
+                android:text="@string/home"
+                android:textAllCaps="true"
+                android:shadowColor="@color/pink3"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="10"
+                android:textColor="@color/pink3"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+        </FrameLayout>
     </RelativeLayout>
-</ScrollView>

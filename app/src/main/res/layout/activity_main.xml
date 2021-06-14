@@ -13,23 +13,24 @@
         android:layout_alignParentBottom="true"
         android:contentDescription="@string/bg"
         android:scaleType="centerCrop"
-        android:src="@drawable/img5" />
+        android:src="@drawable/bg1neon" />
 
     <TextView
         android:id="@+id/NameOfTheGame"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:background="#DCE775"
-        android:fontFamily="casual"
+        android:fontFamily="monospace"
         android:gravity="center_horizontal"
-        android:paddingLeft="10dp"
-        android:paddingTop="10dp"
-        android:paddingRight="10dp"
+
         android:text="@string/app_name"
-        android:textColor="#1B5E20"
-        android:textSize="70sp"
+        android:textColor="@color/pink3"
+        android:shadowColor="@color/pink3"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="50"
+        android:textAllCaps="true"
+        android:textSize="99sp"
         android:textStyle="bold" />
 
 
@@ -39,21 +40,28 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/NameOfTheGame"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
-        android:background="#DCE775">
+        android:layout_marginTop="40dp"
+        android:background="@drawable/buttonborder"
+       >
 
 
         <TextView
             android:id="@+id/SinglePlayer"
-            android:layout_width="220dp"
-            android:layout_height="60dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="?android:attr/selectableItemBackground"
-            android:fontFamily="casual"
+            android:fontFamily="monospace"
             android:gravity="center"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
             android:paddingLeft="18dp"
             android:paddingRight="18dp"
             android:text="@string/SinglePlayer"
-            android:textColor="#BF360C"
+            android:shadowColor="@color/pink3"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="40"
+            android:textColor="@color/pink3"
             android:textSize="30sp"
             android:textStyle="bold" />
 
@@ -68,20 +76,27 @@
         android:layout_below="@id/SinglePlayerFrame"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
-        android:background="#DCE775">
+        android:background="@drawable/buttonborder"
+       >
 
 
         <TextView
             android:id="@+id/TwoPlayer"
-            android:layout_width="220dp"
-            android:layout_height="60dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
             android:background="?android:attr/selectableItemBackground"
-            android:fontFamily="casual"
+            android:fontFamily="monospace"
             android:gravity="center"
             android:paddingLeft="18dp"
             android:paddingRight="18dp"
             android:text="@string/TwoPlayer"
-            android:textColor="#BF360C"
+            android:shadowColor="@color/pink3"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="40"
+            android:textColor="@color/pink3"
             android:textSize="30sp"
             android:textStyle="bold" />
 

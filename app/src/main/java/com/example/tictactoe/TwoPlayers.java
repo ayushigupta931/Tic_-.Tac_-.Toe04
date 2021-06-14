@@ -12,9 +12,10 @@ import android.widget.Toast;
 
 public class TwoPlayers extends AppCompatActivity {
 
-    private Button[] buttons = new Button[9];
-    private Button reset;
-    private Button home;
+    private TextView[] buttons = new TextView[9];
+    private TextView reset;
+    private TextView home;
+    private View playyAgain;
 
     //player 1 == 1
     //player 2 == 0
@@ -57,8 +58,9 @@ public class TwoPlayers extends AppCompatActivity {
         player_1_score = (TextView) findViewById(R.id.player_1_score);
         player_2_score = (TextView) findViewById(R.id.player_2_score);
         status = (TextView) findViewById(R.id.status);
-        reset = (Button) findViewById(R.id.reset);
-        home = (Button) findViewById(R.id.home);
+        reset = (TextView) findViewById(R.id.reset);
+        home = (TextView) findViewById(R.id.home);
+        playyAgain = (View) findViewById(R.id.playAgain1);
 
         player1.setText(EnterNames.Player1);
         player2.setText(EnterNames.Player2);
@@ -67,39 +69,71 @@ public class TwoPlayers extends AppCompatActivity {
         for (i = 0; i < buttons.length; i++) {
             String buttonId = "button_" + i;
             int resourceId = getResources().getIdentifier(buttonId, "id", getPackageName());
-            buttons[i] = (Button) findViewById(resourceId);
+            buttons[i] = (TextView) findViewById(resourceId);
             buttons[i].setOnClickListener(new View.OnClickListener() {
 
                 @Override
                 public void onClick(View v) {
 
-                    status.setVisibility(View.INVISIBLE);
+
 
                     //button already clicked
-                    if (!(((Button) v).getText().toString().equals(""))) {
+                    if (!(((TextView) v).getText().toString().equals(""))) {
                         Toast.makeText(TwoPlayers.this, "Button already clicked!", Toast.LENGTH_SHORT).show();
                         return;
                     } else {
                         String ButtonID = v.getResources().getResourceEntryName(v.getId());
                         int gameStatePointer = Integer.parseInt(ButtonID.substring(ButtonID.length() - 1));
-                        if (activePlayer) {
-                            ((Button) v).setText("x");
-                            ((Button) v).setTextColor(Color.RED);
-                            gameState[gameStatePointer] = 1;
-                        } else {
-                            ((Button) v).setText("o");
-                            ((Button) v).setTextColor(Color.CYAN);
-                            gameState[gameStatePointer] = 0;
+                        if (playyAgain.getVisibility() != View.VISIBLE) {
+                            if (activePlayer) {
+                                ((TextView) v).setText("x");
+                                ((TextView) v).setTextColor(Color.MAGENTA);
+                                ((TextView) v).setShadowLayer(20, 0, 0, Color.MAGENTA);
+                                gameState[gameStatePointer] = 1;
+                            } else {
+                                ((TextView) v).setText("o");
+                                ((TextView) v).setTextColor(Color.CYAN);
+                                ((TextView) v).setShadowLayer(20, 0, 0, Color.CYAN);
+                                gameState[gameStatePointer] = 0;
+                            }
+                            count++;
                         }
-                    }
-                    count++;
 
-                    if (checkWinner()) {
-                        playAgain();
-                    } else if (count == 9) {
-                        k = 2;
-                        playAgain();
-                    } else
+                    }
+                    if (checkWinner() || count == 9) {
+                        if(count == 9 && k==-1)
+                            k =2;
+
+                        status.setVisibility(View.VISIBLE);
+
+                        if (k == 1) {
+                            status.setText((EnterNames.Player1).toUpperCase() + " won the game!");
+
+                        } else if (k == 0) {
+                            status.setText((EnterNames.Player2).toUpperCase() + " won the game!");
+
+                        } else if (k == 2) {
+                            status.setText(R.string.tie);
+                        }
+
+                        String p1_score = "" + player1Score;
+                        String p2_score = "" + player2Score;
+
+                        player_1_score.setText(p1_score);
+                        player_2_score.setText(p2_score);
+
+                        playyAgain.setVisibility(View.VISIBLE);
+                        playyAgain.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                if(k!= -1){
+                                    status.setVisibility(View.INVISIBLE);
+                                    playAgain();
+                                }
+                            }
+                        });
+                    }
+                     else
                         activePlayer = !activePlayer;
                 }
 
@@ -109,6 +143,16 @@ public class TwoPlayers extends AppCompatActivity {
         reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                status.setText("");
+                player1Score = 0;
+                player2Score = 0;
+
+                String p1_score = "" + player1Score;
+                String p2_score = "" + player2Score;
+
+                player_1_score.setText(p1_score);
+                player_2_score.setText(p2_score);
+
                 k = -1;
                 playAgain();
             }
@@ -124,9 +168,10 @@ public class TwoPlayers extends AppCompatActivity {
     }
 
     public boolean checkWinner() {
-
-        k = -1;
         boolean result = false;
+        if (playyAgain.getVisibility() != View.VISIBLE) {
+        k = -1;
+
         for (int[] winningCombination : winningCombinations) {
             if (gameState[winningCombination[0]] == gameState[winningCombination[1]] && gameState[winningCombination[1]] == gameState[winningCombination[2]] && gameState[winningCombination[0]] == 1) {
                 k = 1;
@@ -140,12 +185,13 @@ public class TwoPlayers extends AppCompatActivity {
                 result = true;
                 break;
             }
-        }
+        }}
         return result;
     }
 
     public void playAgain() {
-        status.setVisibility(View.VISIBLE);
+        playyAgain.setVisibility(View.INVISIBLE);
+
         activePlayer = true;
         count = 0;
         for (int i = 0; i < buttons.length; i++) {
@@ -153,25 +199,7 @@ public class TwoPlayers extends AppCompatActivity {
             gameState[i] = 2;
         }
 
-        if (k == 1) {
-            status.setText((EnterNames.Player1).toUpperCase() + " won the game!");
-
-        } else if (k == 0) {
-            status.setText((EnterNames.Player2).toUpperCase() + " won the game!");
-
-        } else if (k == 2) {
-            status.setText(R.string.tie);
-        } else {
-            status.setText("");
-            player1Score = 0;
-            player2Score = 0;
-        }
-
-        String p1_score = "" + player1Score;
-        String p2_score = "" + player2Score;
-
-        player_1_score.setText(p1_score);
-        player_2_score.setText(p2_score);
+      k = -1;
     }
 
 }

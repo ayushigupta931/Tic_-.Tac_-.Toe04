@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Tic Tac Toe</string>
-    <string name="SinglePlayer">Single Player</string>
-    <string name="TwoPlayer">Two Players</string>
+    <string name="SinglePlayer">One Player</string>
+    <string name="TwoPlayer">Two Player</string>
     <string name="select">Select your shape</string>
     <string name="zero">O</string>
     <string name="cross">X</string>
@@ -20,5 +20,7 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="bg">background image</string>
+    <string name="back">&lt;&lt;</string>
     <string name="arrow">Arrow</string>
+    <string name="playAgain">Tap here to play again !</string>
 </resources>

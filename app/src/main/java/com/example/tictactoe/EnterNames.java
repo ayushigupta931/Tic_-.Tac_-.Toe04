@@ -8,7 +8,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 public class EnterNames extends AppCompatActivity {
 
@@ -24,7 +27,7 @@ public class EnterNames extends AppCompatActivity {
         EditText player_2 = (EditText) findViewById(R.id.player2);
 
 
-        ImageView arrow = (ImageView) findViewById(R.id.arrow);
+        TextView arrow = (TextView) findViewById(R.id.arrow);
 
         arrow.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,7 +37,7 @@ public class EnterNames extends AppCompatActivity {
             }
         });
 
-        Button play1 = (Button) findViewById(R.id.play1);
+        TextView play1 = (TextView) findViewById(R.id.play1);
         play1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

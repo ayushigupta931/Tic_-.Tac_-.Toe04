@@ -3,38 +3,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#DCE775">
+   >
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-
-        android:padding="16dp"
         tools:context=".EnterNames"
         tools:ignore="ScrollViewSize">
 
         <ImageView
+            android:contentDescription="@string/bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/bg4neon"
+            android:scaleType="centerCrop"/>
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
             android:id="@+id/arrow"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="wrap_content"
+            android:shadowColor="@color/pink3"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:fontFamily="monospace"
+            android:shadowRadius="20"
+            android:textColor="@color/pink3"
+            android:textAllCaps="true"
+            android:layout_height="wrap_content"
             android:background="?android:attr/selectableItemBackground"
-            android:contentDescription="@string/arrow"
-            android:src="@drawable/leftarrow" />
+            android:textSize="40sp"
+            android:text="@string/back"
+            />
 
         <LinearLayout
+            android:id="@+id/playerA"
             android:layout_width="match_parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="70dp"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+
                 android:layout_marginRight="20dp"
-                android:fontFamily="casual"
+                android:fontFamily="monospace"
                 android:text="@string/cross"
-                android:textColor="#FF0000"
+                android:shadowColor="@color/magenta"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="10"
+                android:textColor="@color/magenta"
                 android:textSize="35sp"
                 android:textStyle="bold"
                 tools:ignore="RtlHardcoded" />
@@ -43,30 +64,44 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:fontFamily="casual"
+
+                android:fontFamily="monospace"
                 android:text="@string/player1"
-                android:textColor="#1B5E20"
+                android:shadowColor="@color/pink3"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="20"
+                android:textColor="@color/pink3"
                 android:textSize="40sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
 
         <EditText
+            android:layout_marginLeft="16dp"
             android:id="@+id/player1"
+            android:layout_below="@id/playerA"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:backgroundTint="#1B5E20"
-            android:fontFamily="casual"
+            android:backgroundTint="@color/pink3"
+            android:fontFamily="monospace"
             android:hint="@string/EnterName"
+            android:textColorHint="@color/green1"
+            android:shadowColor="@color/green1"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="10"
             android:inputType="text"
-            android:textColor="#BF360C"
+            android:textColor="@color/green1"
             android:textSize="20sp"
             tools:ignore="Autofill,UnusedAttribute" />
 
 
         <LinearLayout
+            android:layout_marginLeft="16dp"
+            android:layout_below="@id/player1"
+            android:id="@+id/playerB"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -76,9 +111,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="20dp"
-                android:fontFamily="casual"
+                android:fontFamily="monospace"
                 android:text="@string/zero"
-                android:textColor="#03A9F4"
+                android:shadowColor="@color/blue1"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="10"
+                android:textColor="@color/blue1"
                 android:textSize="35sp"
                 android:textStyle="bold"
                 tools:ignore="RtlHardcoded" />
@@ -88,9 +127,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
-                android:fontFamily="casual"
+                android:fontFamily="monospace"
                 android:text="@string/player2"
-                android:textColor="#1B5E20"
+                android:shadowColor="@color/pink3"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="20"
+                android:textColor="@color/pink3"
                 android:textSize="40sp"
                 android:textStyle="bold" />
 
@@ -98,31 +141,51 @@
 
 
         <EditText
+            android:layout_marginLeft="16dp"
+            android:layout_below="@id/playerB"
             android:id="@+id/player2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:backgroundTint="#1B5E20"
-            android:fontFamily="casual"
+            android:backgroundTint="@color/pink3"
+            android:fontFamily="monospace"
             android:hint="@string/EnterName"
+            android:textColorHint="@color/green1"
+            android:shadowColor="@color/green1"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="10"
             android:inputType="text"
-            android:textColor="#BF360C"
+            android:textColor="@color/green1"
             android:textSize="20sp"
             tools:ignore="Autofill,UnusedAttribute" />
 
-        <Button
+        <FrameLayout
+            android:layout_below="@id/player2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/buttonborder">
+
+        <TextView
             android:id="@+id/play1"
+           android:textAllCaps="true"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="60dp"
-            android:fontFamily="casual"
+            android:gravity="center_horizontal"
+            android:fontFamily="monospace"
             android:padding="10dp"
             android:text="@string/play"
-            android:textColor="#DCE775"
+            android:background="?android:attr/selectableItemBackground"
+            android:shadowColor="@color/pink3"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="20"
+            android:textColor="@color/pink3"
             android:textSize="30sp"
             android:textStyle="bold" />
+        </FrameLayout>
 
-
-    </LinearLayout>
+    </RelativeLayout>
 </ScrollView>

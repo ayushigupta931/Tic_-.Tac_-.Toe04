@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TicTacToe">
         <activity android:name=".EnterNames" android:label="Two players"></activity>
-        <activity android:name=".ChooseXO" android:label="Single Player" />
+        <activity android:name=".ChooseXO" android:label="One Player" />
         <activity android:name=".TwoPlayers" android:label="Two Players" />
         <activity android:name=".SinglePlayer" android:label="Single Player" />
         <activity android:name=".MainActivity">

@@ -1,41 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#DCE775">
 
-    <LinearLayout
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp"
         tools:context=".ChooseXO">
 
         <ImageView
+            android:contentDescription="@string/bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bg4neon" />
+
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
             android:id="@+id/arrow1"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="wrap_content"
+            android:shadowColor="@color/pink3"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:fontFamily="monospace"
+            android:shadowRadius="20"
+            android:textColor="@color/pink3"
+            android:textAllCaps="true"
+            android:layout_height="wrap_content"
             android:background="?android:attr/selectableItemBackground"
-            android:contentDescription="@string/arrow"
-            android:src="@drawable/leftarrow" />
+            android:textSize="40sp"
+            android:text="@string/back"
+            />
 
         <TextView
             android:id="@+id/select"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="100dp"
-            android:fontFamily="casual"
+            android:gravity="center_horizontal"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="80dp"
+            android:fontFamily="monospace"
+            android:shadowColor="@color/pink3"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="20"
             android:text="@string/select"
-            android:textColor="#1B5E20"
-            android:textSize="40sp"
+            android:textColor="@color/pink3"
+            android:textSize="30sp"
             android:textStyle="bold" />
 
         <RadioGroup
+            android:id="@+id/rg1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
+            android:layout_below="@id/select"
+            android:layout_centerHorizontal="true"
             android:orientation="horizontal">
 
             <RadioButton
@@ -44,11 +66,15 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="30dp"
-                android:buttonTint="#1B5E20"
-                android:fontFamily="casual"
+                android:buttonTint="@color/green1"
+                android:fontFamily="monospace"
                 android:paddingLeft="10dp"
+                android:shadowColor="@color/green1"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="20"
                 android:text="@string/zero"
-                android:textColor="#BF360C"
+                android:textColor="@color/green1"
                 android:textSize="35sp"
                 android:textStyle="bold"
                 tools:ignore="RtlHardcoded,RtlSymmetry,UnusedAttribute" />
@@ -59,27 +85,112 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="20dp"
-                android:buttonTint="#1B5E20"
-                android:fontFamily="casual"
+                android:buttonTint="@color/green1"
+                android:fontFamily="monospace"
                 android:paddingLeft="10dp"
+                android:shadowColor="@color/green1"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="20"
                 android:text="@string/cross"
-                android:textColor="#BF360C"
+                android:textColor="@color/green1"
+                android:textSize="35sp"
+                android:textStyle="bold"
+                tools:ignore="RtlHardcoded,RtlSymmetry,UnusedAttribute" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/whoWillStart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rg1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:fontFamily="monospace"
+            android:gravity="center_horizontal"
+            android:shadowColor="@color/pink3"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="20"
+            android:text="@string/whoWillStart"
+            android:textColor="@color/pink3"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:id="@+id/rg2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/whoWillStart"
+            android:layout_centerHorizontal="true"
+
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/yes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:buttonTint="@color/green1"
+                android:fontFamily="monospace"
+                android:paddingLeft="10dp"
+                android:shadowColor="@color/green1"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="15"
+                android:text="@string/yes"
+                android:textColor="@color/green1"
+                android:textSize="35sp"
+                android:textStyle="bold"
+                tools:ignore="RtlHardcoded,RtlSymmetry,UnusedAttribute" />
+
+            <RadioButton
+                android:id="@+id/no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:buttonTint="@color/green1"
+                android:fontFamily="monospace"
+                android:paddingLeft="10dp"
+                android:shadowColor="@color/green1"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="15"
+                android:text="@string/no"
+                android:textColor="@color/green1"
                 android:textSize="35sp"
                 android:textStyle="bold"
                 tools:ignore="RtlHardcoded,RtlSymmetry,UnusedAttribute" />
         </RadioGroup>
 
 
-        <Button
-            android:id="@+id/play"
-            android:layout_width="150dp"
+        <FrameLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="70dp"
-            android:fontFamily="casual"
-            android:text="@string/play"
-            android:textColor="#DCE775"
-            android:textSize="30sp"
-            android:textStyle="bold" />
-    </LinearLayout>
-</ScrollView>
+            android:layout_below="@id/rg2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="65dp"
+            android:background="@drawable/buttonborder">
+
+            <TextView
+                android:id="@+id/play"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="?android:attr/selectableItemBackground"
+                android:fontFamily="monospace"
+                android:gravity="center_horizontal"
+                android:padding="10dp"
+                android:shadowColor="@color/pink3"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="20"
+                android:text="@string/play"
+                android:textAllCaps="true"
+                android:textColor="@color/pink3"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+        </FrameLayout>
+    </RelativeLayout>
